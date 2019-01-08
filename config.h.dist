@@ -1,0 +1,40 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+//#define DHT_SENS
+#define DS18B20_SENS
+#define BRIGHTNESS_SENS
+
+// Wifi Credentials
+#define WIFI_SSID       "<YOUR_WIFI_SSID_HERE>"
+#define WIFI_PASS       "<YOUR_WIFI_PASS_HERE>"
+
+// mqtt with ssl?
+//#define MQTT_SECURE
+
+// MQTT Server
+#define MQTT_SERVER      "<YOUR_MQTT_SERVER_HERE>"
+#define MQTT_SERVERPORT  <YOUR_MQTT_PORT_HERE>                   // use 1883 or 8883 for SSL
+#define MQTT_USERNAME    ""
+#define MQTT_KEY         ""
+
+// which dht sens?
+#define DHTTYPE DHT11
+//#define DHTTYPE DHT22
+
+// DHT Sensor
+#define DHTPin 0
+
+// DS18B20 Sensor
+#define OneWirePin D4
+
+// Brightness Sensor
+#define BrightnessPin A0
+
+// MQTT Topics
+#define ROOM "living"
+#define MQTT_TOPIC_TEMP(x) MQTT_USERNAME "/rooms/"x"/sensors/temperature"
+#define MQTT_TOPIC_HUMI(x) MQTT_USERNAME "/rooms/"x"/sensors/humidity"
+#define MQTT_TOPIC_BRIG(x) MQTT_USERNAME "/rooms/"x"/sensors/brightness"
+
+#endif // CONFIG_H
